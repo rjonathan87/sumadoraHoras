@@ -12,7 +12,7 @@
     <input type="text" name="tiempocalc" id="tiempocalc" />
 
     <script>
-      var tiempos = ["02:50:51", "23:11:11", "10:02:31"];
+      var tiempos = ["02:50:51", "23:11:11", "10:02:01"];
       var tiempo = "00:00:00";
       var t1 = "00:00:00";
       var t2 = "00:00:00";
@@ -74,6 +74,10 @@
 
         // SUMAR HORAS /////////////////////////////////////////////////
         hours = minDiv + ph10 + ph20;
+
+        hours = hours < 10 ? `0${hours}` : `${hours}`;
+        minutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+        seconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
 
         return `${hours}:${minutes}:${seconds}`;
       }
